@@ -1,7 +1,7 @@
-const StoryItem = ({ story }) => {
+const StoryItem = ({ story, onClick }) => {
     const { title, author, num_comments, points } = story;
     return (
-        <div className="story-item">
+        <div className="story-item" onClick={() => onClick(story)}>
             <h4>{title}</h4>
             <p>By: {author}</p>
             <p>Comments: {num_comments} | Points: {points}</p>
