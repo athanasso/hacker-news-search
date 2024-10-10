@@ -9,8 +9,14 @@ const useSearchStories = (query) => {
         if (query.length >= 3) {
             setLoading(true);
             fetchStories(query)
-            .then((stories) => setStories(stories))
-            .finally(() => setLoading(false));
+                .then((stories) => setStories(stories))
+                .catch((error) => {
+                    console.error("Error fetching stories:", error);
+                    setStories([]); // Set to empty array on error
+                })
+                .finally(() => setLoading(false));
+        } else {
+            setStories([]); // Reset stories if query is less than 3 characters
         }
     }, [query]);
 
