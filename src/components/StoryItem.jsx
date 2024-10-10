@@ -1,5 +1,3 @@
-import React from 'react';
-
 const StoryItem = ({ story }) => {
     const { title, author, num_comments, points } = story;
     return (

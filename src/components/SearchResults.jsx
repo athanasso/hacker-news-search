@@ -1,4 +1,3 @@
-import React from 'react';
 import StoryItem from './StoryItem';
 
 const SearchResults = ({ stories, loading }) => {
