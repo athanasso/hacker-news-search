@@ -28,7 +28,7 @@ const App = () => {
         <h1>Hacker News Search</h1>
         <SearchBar query={query} setQuery={setQuery} />
         {/* Show the dropdown if there are 3+ characters typed */}
-        {query.length >= 3 && <SearchDropdown stories={stories} loading={loading} onStoryClick={saveStory}/>}
+        {query.length >= 3 && <SearchDropdown stories={stories} loading={loading} searchTerm={query} onStoryClick={saveStory}/>}
       </div>
 
       {/* Saved Stories Section */}
