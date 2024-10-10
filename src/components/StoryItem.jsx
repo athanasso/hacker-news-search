@@ -3,7 +3,7 @@ const StoryItem = ({ story, searchTerm, onClick }) => {
 
     // Function to highlight the search term in the title
     const highlightText = (text) => {
-        if (!searchTerm) return text;
+        if (!text || !searchTerm) return text;
         const regex = new RegExp(`(${searchTerm})`, 'gi'); // Case insensitive match
         const parts = text.split(regex); // Split by the search term
         return parts.map((part, index) =>
